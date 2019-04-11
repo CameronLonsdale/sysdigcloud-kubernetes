@@ -124,6 +124,12 @@ spec:
             #   readOnly: true
             #   name: host-etc-hostname
             ##########################################
+          lifecycle:
+            postStart:
+              exec:
+                command:
+                  - /bin/bash
+                  - add_user.sh
       imagePullSecrets:
         - name: sysdigcloud-pull-secret
       ### Start of the custom Cassandra snitch group
