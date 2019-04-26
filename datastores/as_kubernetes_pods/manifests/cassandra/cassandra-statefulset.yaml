@@ -79,9 +79,9 @@ spec:
                   key: cassandra.user
             - name: CASSANDRA_PASSWORD
               valueFrom:
-                secretKeyRef:
-                  name: cassandra-user-password
-                  key: password
+                configMapKeyRef:
+                  name: sysdigcloud-config
+                  key: cassandra.password
             - name: POD_IP
               valueFrom:
                 fieldRef:
